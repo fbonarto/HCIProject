@@ -11,12 +11,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="hcibookmarks">
-		<div id="main_wrapper" ng-controller="MainController">
-		<header>
-		<h1>My Bookmarks</h1>
-		</header>
-		<section id="my_marks"></section>		
-		</div>
+		<div id="main_wrapper">Sample</div>
 	
 
 		<script src="bower_components/jquery/jquery.min.js">
