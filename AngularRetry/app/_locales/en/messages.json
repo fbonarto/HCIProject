@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "HCIBookmarks",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "An improved bookmarking experience",
+    "description": "The description of the application"
+  }
+}
