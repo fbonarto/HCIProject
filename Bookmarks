@@ -1,0 +1,96 @@
+{
+   "checksum": "cb8110d1ffb825313f5dc1bbe1a8f26e",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13065746626660820",
+            "id": "5",
+            "name": "Immersed Games Slack",
+            "type": "url",
+            "url": "https://immersedgames.slack.com/messages"
+         }, {
+            "date_added": "13066353506638365",
+            "id": "7",
+            "name": "Get a reference of a Mesh from Editor to C++ Code - UE4 AnswerHub",
+            "type": "url",
+            "url": "https://answers.unrealengine.com/questions/60173/set-a-reference-to-a-static-mesh-from-editor-to-c.html"
+         }, {
+            "date_added": "13066849814272947",
+            "id": "9",
+            "name": "Amazon.com: Fantastic Four: Books of Doom (9780785122715): Ed Brubaker, Pablo Raimondi: Books",
+            "type": "url",
+            "url": "http://www.amazon.com/Fantastic-Four-Books-Ed-Brubaker/dp/0785122710"
+         }, {
+            "date_added": "13066951946346785",
+            "id": "11",
+            "name": "Interfaces in C++ - Epic Wiki",
+            "type": "url",
+            "url": "https://wiki.unrealengine.com/Interfaces_in_C%2B%2B#Determining_If_a_Given_Actor_Has_The_Interface"
+         }, {
+            "date_added": "13066956738105884",
+            "id": "12",
+            "name": "Unreal Engine | Classes",
+            "type": "url",
+            "url": "https://docs.unrealengine.com/latest/INT/API/Classes/index.html"
+         }, {
+            "date_added": "13068740000309476",
+            "id": "17",
+            "name": "Alessandro Volta’s 270th birthday",
+            "type": "url",
+            "url": "https://www.google.com/search?q=Alessandro+Volta&oi=ddle&ct=alessandro-voltas-270th-birthday-5398960088809472-hp&hl=en"
+         }, {
+            "date_added": "13066962956018087",
+            "id": "13",
+            "name": "Unreal Engine | UStaticMesh",
+            "type": "url",
+            "url": "https://docs.unrealengine.com/latest/INT/API/Runtime/Engine/Engine/UStaticMesh/index.html"
+         }, {
+            "date_added": "13067462714823115",
+            "id": "15",
+            "name": "1,000,000 Stupid Questions for UE4 Developers",
+            "type": "url",
+            "url": "http://error454.com/2014/10/17/UE4-Crash-Course/"
+         }, {
+            "date_added": "13068969458954024",
+            "id": "19",
+            "name": "The Art of Anonymity",
+            "type": "url",
+            "url": "https://evilzone.org/anonymity/the-art-of-anonymity-9178/"
+         }, {
+            "date_added": "13070265670683923",
+            "id": "21",
+            "name": "GRE Revised General Test: Disability Accommodations",
+            "type": "url",
+            "url": "https://www.ets.org/gre/revised_general/register/disabilities/"
+         }, {
+            "date_added": "13070271962662335",
+            "id": "22",
+            "name": "100 facts about Disneyland - Album on Imgur",
+            "type": "url",
+            "url": "http://imgur.com/a/emyHd?gallery"
+         } ],
+         "date_added": "13065746549499861",
+         "date_modified": "13070271962662335",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13065746549500056",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13065746549500058",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
