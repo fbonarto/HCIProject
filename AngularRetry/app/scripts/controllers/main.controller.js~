@@ -1,4 +1,4 @@
-angular.module('hcibookmarks').controller('MainController', function($scope) {
+angular.module('hcibookmarks').controller('MainController', function($scope){
 	$scope.bookmarks = [
 	{
 		title: 'Smashing magazine',

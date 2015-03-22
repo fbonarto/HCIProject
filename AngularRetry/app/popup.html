@@ -15,14 +15,20 @@
 		<header>
 		<h1>My Bookmarks</h1>
 		</header>
-		<section id="my_marks"></section>		
+		<section id="my_marks">
+			<ul>
+				<li ng-repeat="bookmark in bookmarks">
+				  <a target="_blank" ng-href="{{bookmark.url}}">{{bookmark.title}}</a>
+				</li>
+			</ul>
+		</section>
 		</div>
 	
 
-		<script src="bower_components/jquery/jquery.min.js">
-    <script src="bower_components/angular/angular.min.js">
+		<script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
 
-    <h1>'Allo, 'Allo!</h1>
+   
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -32,9 +38,9 @@
     <!-- build:js scripts/popup.js -->
     <script src="scripts/popup.js"></script>
 
-		<script src="scripts/app.js">
-   	<script src="scripts/controllers/main.controller.js">
-   	<script src="scripts/directives/main.directive.js">
+		<script src="scripts/app.js"></script>
+   	<script src="scripts/controllers/main.controller.js"></script>
+   	<script src="scripts/directives/main.directive.js"></script>
     <!-- endbuild -->
   </body>
 </html>
