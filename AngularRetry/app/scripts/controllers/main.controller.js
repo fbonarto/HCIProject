@@ -1,12 +1,10 @@
-angular.module('hcibookmarks').controller('MainController', function($scope) {
-	$scope.bookmarks = [
-	{
-		title: 'Smashing magazine',
-  	url: 'http://www.smashingmagazine.com/'
-	},
-	{
-  	title: 'Markticle',
-	  url: 'https://markticle.com'
-	}
-	];
+angular.module('hcibookmarks').controller('MainController', function($scope, StorageService) {
+  $scope.bookmarks = StorageService.get();
+  $scope.removeBookmark = function(url) {
+    StorageService.remove(url);
+    $scope.bookmarks = StorageService.get();
+    if(!$scope.$$phase) {
+      $scope.$apply();
+    }
+  };
 });

@@ -17,8 +17,9 @@
 		</header>
 		<section id="my_marks">
 			<ul>
-				<li ng-repeat="books in bookmarks">
+				<li ng-repeat="bookmark in bookmarks">
 				  <a target="_blank" ng-href="{{bookmark.url}}">{{bookmark.title}}</a>
+					<span class="remove" ng-click="removeMark(mark.url)">remove</span>
 				</li>
 			</ul>
 		</section>

@@ -19,6 +19,7 @@
 			<ul>
 				<li ng-repeat="bookmark in bookmarks">
 				  <a target="_blank" ng-href="{{bookmark.url}}">{{bookmark.title}}</a>
+					<span class="remove" ng-click="removeBookmark(bookmark.url)">remove</span>
 				</li>
 			</ul>
 		</section>
