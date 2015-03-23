@@ -1,1 +1,3 @@
-angular.module('hcibookmarks', []);
+'use strict';
+
+angular.module('markticle', []);

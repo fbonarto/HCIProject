@@ -1,10 +1,15 @@
-angular.module('hcibookmarks').controller('MainController', function($scope, StorageService) {
-  $scope.bookmarks = StorageService.get();
-  $scope.removeBookmark = function(url) {
-    StorageService.remove(url);
-    $scope.bookmarks = StorageService.get();
-    if(!$scope.$$phase) {
-      $scope.$apply();
-    }
-  };
-});
+'use strict';
+
+angular.module('markticle').controller('MainController', ['$scope', 'StorageService', function($scope, StorageService) {
+	$scope.marks = StorageService.get();
+
+	$scope.removeMark = function(url) {
+		StorageService.remove(url);
+		$scope.marks = StorageService.get();
+
+		if(!$scope.$$phase) {
+			$scope.$apply();
+		}
+	};
+
+}]);

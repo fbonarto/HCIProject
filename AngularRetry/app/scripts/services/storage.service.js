@@ -1,1 +1,3 @@
-angular.module('hcibookmarks').service('StorageService', hcibookmarksStorageService);
+'use strict';
+
+angular.module('markticle').service('StorageService', markticleStorageService);

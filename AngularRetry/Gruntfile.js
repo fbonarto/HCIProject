@@ -1,4 +1,4 @@
-// Generated on 2015-03-22 using generator-chrome-extension 0.3.1
+// Generated on 2014-10-17 using generator-chrome-extension 0.2.11
 'use strict';
 
 // # Globbing
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
         tasks: ['jshint'],
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: true
         }
       },
       gruntfile: {
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: [],
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: true
         }
       },
       livereload: {
@@ -143,8 +143,7 @@ module.exports = function (grunt) {
         dest: '<%= config.dist %>'
       },
       html: [
-        '<%= config.app %>/popup.html',
-        '<%= config.app %>/options.html'
+        '<%= config.app %>/index.html'
       ]
     },
 
@@ -213,15 +212,23 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/scripts/scripts.js': [
-    //         '<%= config.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    uglify: {
+      dist: {
+        files: {
+          '<%= config.dist %>/special_scripts/background.js': [
+            '<%= config.dist %>/special_scripts/jquery.min.js',
+            '<%= config.dist %>/special_scripts/storage.js',
+            '<%= config.dist %>/special_scripts/background.js'
+          ],
+          '<%= config.dist %>/special_scripts/inject.js': [
+            '<%= config.dist %>/special_scripts/inject.js'
+          ],
+          '<%= config.dist %>/special_scripts/storage.js': [
+            '<%= config.dist %>/special_scripts/storage.js'
+          ]
+        }
+      }
+    },
     // concat: {
     //   dist: {}
     // },
@@ -240,6 +247,8 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'styles/{,*/}*.css',
             'styles/fonts/{,*/}*.*',
+            'icons/*',
+            'special_scripts/*',
             '_locales/{,*/}*.json',
           ]
         }]
@@ -263,12 +272,8 @@ module.exports = function (grunt) {
       dist: {
         options: {
           buildnumber: true,
-          indentSize: 2,
           background: {
-            target: 'scripts/background.js',
-            exclude: [
-              'scripts/chromereload.js'
-            ]
+            target: 'special_scripts/background.js'
           }
         },
         src: '<%= config.app %>',
@@ -282,7 +287,7 @@ module.exports = function (grunt) {
         options: {
           archive: function() {
             var manifest = grunt.file.readJSON('app/manifest.json');
-            return 'package/HCIBookmarks-' + manifest.version + '.zip';
+            return 'package/markticle-demo-' + manifest.version + '.zip';
           }
         },
         files: [{
@@ -314,11 +319,11 @@ module.exports = function (grunt) {
     'chromeManifest:dist',
     'useminPrepare',
     'concurrent:dist',
-    'cssmin',
+    // 'cssmin',
     'concat',
-    'uglify',
     'copy',
     'usemin',
+    'uglify',
     'compress'
   ]);
 
