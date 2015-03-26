@@ -28,12 +28,15 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
 	        $scope.new_mark.dateAdded = new Date().getTime();
 	        $scope.new_mark.dateVisited = new Date().getTime();
 	        $scope.new_mark.order = $scope.marks.length;
+	        $scope.new_mark.color = "#ffffff";
+
 	        return tabs[0];
 	    });
 	};
 	$scope.new_mark = {};
 	$scope.add_success = false;
 	$scope.new_mark.tags = '';
+	$scope.new_mark.color = '#FFFFFF';
 	$scope.add_new = function () {
 	    $scope.new_mark.id = new Date().getTime();
 	    if ($scope.new_mark.tags.length > 0) {
@@ -64,9 +67,22 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
 	    $scope.edit_mark = $scope.marks[index];
 	};
 	$scope.edit = function () {
+	    $scope.edit_mark.color = $scope.selectedcol;
+	    if ( $scope.edit_mark.tags && typeof $scope.edit_mark.tags == 'object') {
+	        $scope.edit_mark.tags = $scope.edit_mark.tags.join(',');
+	    }
+	    if ($scope.edit_mark.tags && $scope.edit_mark.tags.length > 0) {
+	        var temp = $scope.edit_mark.tags;
+	        var temp2 = temp.split(',');
+	        $scope.edit_mark.tags = [];
+	        $.each(temp2, function (i, el) {
+	            if ($.inArray(el.trim(), $scope.edit_mark.tags) === -1) $scope.edit_mark.tags.push(el.trim());
+	        });
+	    }
 	    if (!$scope.$$phase) {
 	        $scope.$apply();
 	    }
+
 	    storageService.add($scope.edit_mark);
 	    $scope.edit_success = true;
 	    $location.path("/");
@@ -78,4 +94,7 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
 	    date.setUTCSeconds(new_date/1000);
 	    return date.toLocaleDateString();
 	};
+
+    //COLORS
+	$scope.colorlist = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4','#00BCD4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E','#607D8B','#000000','#FFFFFF'];
 }]);
