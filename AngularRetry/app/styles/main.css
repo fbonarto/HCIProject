@@ -20,7 +20,7 @@ body {
 }
 
 div.scroll {
-    background-color: #00FFFF;
+    background-color: #fff;
 	width: 400px;
     height: 300px;
     overflow: scroll;
@@ -50,6 +50,7 @@ p.remove {
 	color: red;
 	margin: 0;
 	padding: 0;
+	border-bottom: 1px solid #eee;
 }
 
 #my_marks ul, #my_marks li {
