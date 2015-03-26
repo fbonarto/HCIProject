@@ -76,6 +76,10 @@ function dumpNode(bookmarkNode, query) {
                }).dialog('open');
          });
         $('#addlink').click(function() {
+			chrome.bookmarks.create({'parentId': extensionsFolderId,
+                               'title': 'Extensions doc',
+                               'url': 'http://code.google.com/chrome/extensions'});
+      
           $('#adddialog').empty().append(edit).dialog({autoOpen: false,
             closeOnEscape: true, title: 'Add New Bookmark', modal: true,
             buttons: {

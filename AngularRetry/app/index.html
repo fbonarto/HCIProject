@@ -10,17 +10,18 @@
         <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
     </head>
-    <body ng-app="markticle">
+  <body ng-app="markticle">
         <div id="main_wrapper" ng-controller="MainController">
             <header>
                 <h1>My marks</h1>
             </header>
+			<input type="search" ng-model="search" placeholder="Search...">
             <section id="my_marks">
                 <p ng-if="marks.length < 1">No marks.</p>
                 <ul ng-if="marks.length >= 1">
-                    <li ng-repeat="mark in marks">
+                    <li ng-repeat="mark in marks | filter:search">
                         <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}</a>
-                        <!-- <span class="remove" ng-click="removeMark(mark.url)">remove</span> -->
+                        <span class="remove" ng-click="removeMark(mark.url)">remove</span>
                     </li>
                 </ul>
             </section>

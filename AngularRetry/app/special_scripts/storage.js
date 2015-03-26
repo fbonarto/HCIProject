@@ -14,6 +14,7 @@ var markticleStorageService = function() {
 			this.remove(item.url);
 			data.push(item);
 			this.save();
+			
 		},
 
 		remove: function(url) {
@@ -34,6 +35,6 @@ var markticleStorageService = function() {
 		save: function() {
 			localStorage.setItem(lsName, JSON.stringify(data));
 		}
-
+		
   };
 };
