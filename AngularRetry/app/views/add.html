@@ -1,25 +1,33 @@
 
 <form ng-submit="add_new()">
 	<section id="newMark">
-		<p><label for="title">Title</label></p>
-		<input type="text" id="title" ng-model="new_mark.title" />
-		<p><label for="url">URL</label></p>
-		<input type="text" id="url" ng-model="new_mark.url" size="50" />
-		<p><label for="description">Description</label></p>
-		<input type="text" id="description" ng-model="new_mark.description" />
-		<p><label for="tags">Tags (separated by commas)</label></p>
-		<input type="text" id="tags" ng-model="new_mark.tags" />
-		<p><label for="color">Color Label</label></section>
-	<section id="newM">
-		<input type="color" id="color" ng-model="new_mark.color" /></p></section>
-	<section id="newMark">
-		<p><label for="image">Image</label></section>
-	<section id="newM">
-		<input type="file" id="image" accept="image/*" ng-model="new_mark.image" /></p></section>
-	<br>
-	<section id="newMark">
-		<h2><input type="reset" value="Reset"></h2>
-		<h2><button type="submit">Create</button></h2></section>
+		<div class=form-group>
+			<label for="title">Name</label>
+			<input type="text" id="title"  class="form-control" ng-model="new_mark.title" placeholder="Name" />
+		</div>
+		<div class=form-group>
+			<label for="url">URL</label>
+			<input type="text" id="url"  class="form-control" ng-model="new_mark.url" size="50" placeholder="URL" />
+		</div>
+		<div class=form-group>
+			<label for="description">Description</label>
+			<textarea id="description"  class="form-control" ng-model="new_mark.description" />
+		</div>
+		<div class=form-group>
+			<label for="tags">Tags (separated by commas)</label>
+			<input type="text" id="tags"  class="form-control" ng-model="new_mark.tags" />
+		</div>
+		<div class=form-group>
+			<label for="color">Color Label</label></section>
+			<input type="color" id="color"  class="form-control" ng-model="new_mark.color" style="width:100px!important" />
+		</div>
+		<div class=form-group>
+			<label for="image">Image</label>
+			<input type="file" id="image"  class="form-control" accept="image/*" ng-model="new_mark.image" />
+		</div>
+		<button type="submit" class="btn btn-primary">Create</button>
+		<input type="reset" value="Reset" class="btn btn-link"/>
+	</section>
 </form>
 
 <!--{{new_mark}}-->

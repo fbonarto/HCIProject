@@ -128,3 +128,11 @@ p.remove {
 [x-ng-model]{
     cursor: pointer;
 }
+
+.container, .container-fluid{
+	margin-bottom:20px;
+}
+
+.form-control{
+	width:auto!important;
+}
