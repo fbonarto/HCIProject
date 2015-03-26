@@ -14,8 +14,8 @@
                 </div>
                 <br />
 				<ul ng-if="marks.length >= 1" class="list-view">
-                    <li ng-repeat="mark in marks track by $index | filter:search" class="list-view-item" ng-style="{'border-left-color': mark.color}">
-						<!--{{mark}}-->
+                    <li ng-repeat="mark in marks | filter:search track by $index" class="list-view-item" ng-style="{'border-left-color': mark.color}">
+						
                         <div class="list-view-icon"><img ng-src="{{mark.icon}}" ng-if="mark.icon" class="icon" /></div>
                         <a target="_blank" ng-href="{{mark.url}}"><h2 class="list-view-title"> {{mark.title}}</h2></a>
                         <p class="list-view-description">{{mark.description}} {{getDate(mark.dateVisited)}}</p>
