@@ -67,7 +67,6 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
 	    $scope.edit_mark = $scope.marks[index];
 	};
 	$scope.edit = function () {
-	    $scope.edit_mark.color = $scope.selectedcol;
 	    if ( $scope.edit_mark.tags && typeof $scope.edit_mark.tags == 'object') {
 	        $scope.edit_mark.tags = $scope.edit_mark.tags.join(',');
 	    }
