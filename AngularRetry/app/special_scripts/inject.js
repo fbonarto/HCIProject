@@ -21,17 +21,17 @@ $(document).ready(function() {
 		   	data: {
 				title: title,
 				url: url,
-				tags: tags;
-				description: description;
-				notes: notes;
-				color: color;
-				screenshot: screenshot;
-				icon: icon;
-				dateAdded: date;
-				dateVisited: date;
-				visited: 0;
-				order: 0;
-				group: group;
+				tags: tags,
+				description: description,
+				notes: notes,
+				color: color,
+				screenshot: screenshot,
+				icon: icon,
+				dateAdded: date,
+				dateVisited: date,
+				visited: 0,
+				order: 0,
+				group: group
 			}
 		});
 
