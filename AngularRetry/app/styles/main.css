@@ -26,6 +26,12 @@ div.scroll {
     overflow: scroll;
 }
 
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
 header {
 	background: #333;
 	padding: 10px;
@@ -43,7 +49,7 @@ p.remove {
 	font-size: 10px;
 	color: red;
 	margin: 0;
-	font-weight: 300;
+	padding: 0;
 }
 
 #my_marks ul, #my_marks li {
@@ -55,7 +61,7 @@ p.remove {
 #my_marks li a {
 	display: block;
 	padding: 10px;
-	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
 	text-decoration: none;
 	color: #333;
 }
