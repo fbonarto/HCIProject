@@ -1,4 +1,4 @@
-<section id="newMark">
+<section id="newMark" gotch2>
     <h1 class="h4">Add a bookmark</h1>
 	<form ng-submit="add_new()">
 		<div class="form-group">
@@ -17,9 +17,12 @@
 			<label for="tags">Tags (separated by commas)</label>
 			<input type="text" id="tags"  class="form-control" ng-model="new_mark.tags" />
 		</div>
-		<div class="form-group">
-			<label for="color">Color Label</label>
-			<input type="color" id="color"  class="form-control" ng-model="new_mark.color" style="width:100px!important" />
+		<div class="form-group clearfix">
+			<label>Color Label</label>
+            <ul class="colorpicker" ng-repeat="color in colorlist">
+              <li ng-style="{'background-color': color}" ng-click="new_mark.color = color" ng-class="{'active': new_mark.color == color}">{{color}}</li>
+            </ul>
+		
 		</div>
 		<div class="form-group">
 			<label for="image">Image</label>
@@ -33,5 +36,4 @@
 </section>
 
 
-
-<a href="#/" class="floating-icon btn" title="Back to search"><span class="glyphicon glyphicon-search"></span></a>
+<a href="#/" class="floating-icon btn" title="Back to search" ><span class="glyphicon glyphicon-search"></span></a>

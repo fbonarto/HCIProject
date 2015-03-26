@@ -19,14 +19,7 @@
           <li ng-class="{active:is_active('/add')}"><a href="#/add" data-toggle="tab" aria-expanded="false" >Add</a></li>
      
         </ul>-->
-        <div class="alert alert-dismissible alert-success" ng-if="add_success">
-          <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">&times;</button>
-          <strong>Awesome!</strong> Bookmark was successfully added! 
-        </div>
-        <div class="alert alert-dismissible alert-success" ng-if="edit_success">
-          <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">&times;</button>
-          <strong>Cool!</strong> {{edit_mark.title}} was successfully edited! 
-        </div>
+        
 		</div>
         <div id="main_wrapper" class="container container-fluid" >
             <div ng-view></div>
