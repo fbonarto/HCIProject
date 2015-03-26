@@ -1,1 +1,37 @@
-content content 
+<section id="newMark">
+    <h1 class="h4">Add a bookmark</h1>
+	<form ng-submit="add_new()">
+		<div class="form-group">
+			<label for="dateAdded">Name</label>
+			<input type="text" id="title"  class="form-control" ng-model="new_mark.title" placeholder="Name" />
+		</div>
+		<div class="form-group">
+			<label for="url">URL</label>
+			<input type="text" id="url"  class="form-control" ng-model="new_mark.url" size="50" placeholder="URL" />
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea id="description"  class="form-control" ng-model="new_mark.description" />
+		</div>
+		<div class="form-group">
+			<label for="tags">Tags (separated by commas)</label>
+			<input type="text" id="tags"  class="form-control" ng-model="new_mark.tags" />
+		</div>
+		<div class="form-group">
+			<label for="color">Color Label</label>
+			<input type="color" id="color"  class="form-control" ng-model="new_mark.color" style="width:100px!important" />
+		</div>
+		<div class="form-group">
+			<label for="image">Image</label>
+            <div ng-if="!new_mark.image"><img ng-src="http://www.google.com/s2/favicons?domain={{new_mark.url}}" /> or</div>
+            <div ng-if="new_mark.image">Custom Image</div>
+			<input type="file" id="image"  class="form-control" accept="image/*" ng-model="new_mark.image" />
+		</div>
+       
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+</section>
+
+
+
+<a href="#/" class="floating-icon btn" title="Back to search"><span class="glyphicon glyphicon-search"></span></a>

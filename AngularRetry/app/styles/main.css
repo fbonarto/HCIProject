@@ -1,66 +1,109 @@
-*:focus {
-	outline: 0;
+body{
+	width:400px;
+}
+/*.container, .container-fluid{
+	max-width:100%;
+	max-height:300px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	padding-bottom:20px;
+}*/
+
+nav.navbar {
+    margin-bottom:5px;
 }
 
-a:focus {
-	outline: 0;
+.nav.nav-pills {
+    margin-top:10px;
 }
 
-*::selection {
-	text-shadow: none; 
-	background: #909090; 
-	color: #fff;
+.list-view, .list-view-tags {
+    list-style-type:none;
+    padding:0;
+    margin:0;
 }
 
-body {
-  padding: 20px;
-  width: 400px;
-  margin: 0;
-  padding: 0;
+.list-view-item {
+
+    position:relative;
+}
+.list-view-tags {
+    margin-left:32px;
 }
 
-div.scroll {
-    background-color: #00FFFF;
-	width: 400px;
-    height: 300px;
-    overflow: scroll;
+
+.list-view-tags li{
+    display:inline;
+    margin-right:5px;
 }
 
-header {
-	background: #333;
-	padding: 10px;
+.list-view-item {
+    height: 100px;
+    overflow:hidden;
+    margin:8px 6px;
 }
 
-header h1 {
-	font-size: 24px;
-	color: #fff;
-	margin: 0;
-	font-weight: 300;
-	text-transform: uppercase;
+.list-view-icon {
+    float:left;
+    margin: -2px 16px 0 0;
+}
+.list-view-title {
+    font-size:16px;
+    margin:0;
+    height:18px; 
+    width: 85%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.list-view-description {
+    font-size:14px;
+    color:#bbbbbb;
+    height:22px; 
+    width: 85%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    margin-bottom:0;
+    margin-top:0;
 }
 
-p.remove {
-	font-size: 10px;
-	color: red;
-	margin: 0;
-	font-weight: 300;
+.list-remove, .list-edit {
+    display:none;
+}
+.list-view-item:hover .list-remove, .list-view-item:hover .list-edit {
+    display:block;
+}
+.list-view-item .list-remove{
+    position:absolute;
+    top: 0;
+    right:0;
+}
+.list-remove a, .list-remove a:hover {
+    color: #e51c23;
+    cursor:pointer;
+}
+.list-edit {
+    position:absolute;
+    bottom: 34px;
+    right: 0;
+    color:#bbb;
 }
 
-#my_marks ul, #my_marks li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.floating-icon {
+    position:fixed;
+    top:5px;
+    right:5px;
+    display:inline-block;
+    background-color:#2196f3;
+    border-radius:50%!important;
+    width:40px;
+    height:40px;
+    font-size:20px!important;
 }
-
-#my_marks li a {
-	display: block;
-	padding: 10px;
-	border-bottom: 1px solid #eee;
-	text-decoration: none;
-	color: #333;
-}
-
-#my_marks li a:hover {
-	background: #eee;
-	color: #000;
-}
+    .floating-icon span {
+        color:#fff;
+        position:relative;
+        right: 7px;
+        top:-3px;
+    } 
