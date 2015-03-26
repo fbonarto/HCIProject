@@ -9,6 +9,9 @@ app.config(['$routeProvider', function($routeProvider){
 		}).
 		when('/add', {
 			templateUrl: 'views/add.html'
+		}).
+		when('/edit', {
+			templateUrl: 'views/edit.html'
 		})
 		.otherwise({
 			redirectTo: '/'

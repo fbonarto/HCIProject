@@ -11,16 +11,15 @@ var markticleStorageService = function() {
 		},
 
 		add: function(item) {
-			this.remove(item.url);
+			this.remove(item.id);
 			data.push(item);
 			this.save();
-			
 		},
 
-		remove: function(url) {
+		remove: function(id) {
 			var idx = null;
 			for(var i = 0; i < data.length; i++) {
-				if(data[i].url === url) {
+				if(data[i].id === id) {
 					idx = i;
 					break;
 				}

@@ -12,19 +12,15 @@
 
         <!-- endbuild -->
     </head>
-    <body>
-	<a href="#" class="btn btn-primary">Bootstrap Test</a>
-	<section id="menuBar">
-	<ul>
-		<li><a href="#/">Search</a></li>
-		<li><a href="#/add">Add</a></li>
-	</ul>
-	</section>
-        <div id="main_wrapper" class="container container-fluid" ng-controller="MainController">
+    <body ng-controller="MainController">
+        <ul class="nav nav-pills" >
+          <li ng-class="{active:is_active('/')}"><a href="#/" data-toggle="tab" aria-expanded="false">Search</a></li>
+          <li ng-class="{active:is_active('/add')}"><a href="#/add" data-toggle="tab" aria-expanded="false" ng-click="tab = getTab()">Add</a></li>
+     
+        </ul>
+        <div id="main_wrapper" class="container container-fluid" >
             <div ng-view></div>
         </div>
-
-		
 		
         <!-- build:js scripts/modules.js -->
         <!-- bower:js -->
