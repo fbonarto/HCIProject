@@ -8,6 +8,9 @@ body{
 	overflow-x:hidden;
 	padding-bottom:20px;
 }*/
+form {
+    margin-bottom:10px
+}
 
 nav.navbar {
     margin-bottom:5px;
