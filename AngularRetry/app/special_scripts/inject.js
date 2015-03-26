@@ -16,6 +16,7 @@ $(document).ready(function() {
 		var icon = "http://www.google.com/s2/favicons?domain=" + window.location.href;
 		var date = new Date();
 		var group = "";
+		var notes = "";
 		chrome.extension.sendMessage({
 		   	action : 'add',
 		   	data: {
