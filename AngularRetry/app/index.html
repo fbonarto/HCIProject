@@ -22,8 +22,9 @@
 				<div class="scroll">
                     <li ng-repeat="mark in marks | filter:search">
                         <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}</a>
-                        <span class="remove" ng-click="removeMark(mark.url)">remove</span></div>
+                        <p class="remove"><span class="remove" ng-click="removeMark(mark.url)">remove</span></p>
                     </li>
+				</div>
                 </ul>
             </section>
         </div>
