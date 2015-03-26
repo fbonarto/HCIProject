@@ -1,1 +1,17 @@
-content content 
+<form ng-submit="add_new()">
+	<label for="title">Title</label>
+	<input type="text" id="title" ng-model="new_mark.title" />
+	<label for="url">URL</label>
+	<input type="text" id="url" ng-model="new_mark.url" />
+	<label for="description">Description</label>
+	<input type="text" id="description" ng-model="new_mark.description" />
+	<label for="tags">Tags (separated by commas)</label>
+	<input type="text" id="tags" ng-model="new_mark.tags" />
+	<label for="color">Color Label</label>
+	<input type="color" id="color" ng-model="new_mark.color" />
+	<label for="image">Image</label>
+	<input type="file" id="image" accept="image/*" ng-model="new_mark.image" />
+	<button type="submit">Submit</button>
+</form>
+
+{{new_mark}}

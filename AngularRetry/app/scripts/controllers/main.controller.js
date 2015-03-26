@@ -11,5 +11,14 @@ angular.module('markticle').controller('MainController', ['$scope', 'StorageServ
 			$scope.$apply();
 		}
 	};
-
+	
+	// ADD
+   	var storageService = new markticleStorageService();
+	$scope.new_mark = {};
+	$scope.new_mark.dateAdded = new Date();
+	$scope.new_mark.dateVisited = new Date();
+	$scope.new_mark.order = $scope.marks.length;
+	$scope.add_new = function(){
+   		storageService.add($scope.new_mark);
+	}
 }]);

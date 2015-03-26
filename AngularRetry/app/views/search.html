@@ -7,6 +7,7 @@
                 <ul ng-if="marks.length >= 1">
 				<div class="scroll">
                     <li ng-repeat="mark in marks | filter:search">
+						{{mark}}
 						<img ng-src="{{mark.icon}}" />
                         <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}</a>
                         <p class="remove"><span class="remove" ng-click="removeMark(mark.url)">remove</span></p>
