@@ -15,11 +15,12 @@
 				<div class="scroll">
                     <li ng-repeat="mark in marks | filter:search">
 						<!--{{mark}}-->
-						<img ng-src="{{mark.icon}}" />
+						<img ng-src="{{mark.icon}}"/>
+						<img ng-src="{{mark.image}}" ng-if="mark.image" />
                         <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}</a>
                         <div class="remove"><a class="remove" ng-click="removeMark(mark.id)">remove</a></div>
                         <div class="edit"><a ng-click="getMark($index)" href="#/edit">edit</a></div>
-                        {{mark.id}}
+                        {{mark}}
                     </li>
 				</div>
                 </ul>

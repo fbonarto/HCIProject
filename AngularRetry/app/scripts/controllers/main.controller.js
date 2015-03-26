@@ -21,7 +21,7 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
 	        $scope.tab = tabs[0];
 	        $scope.new_mark.title = $scope.tab.title;
 	        $scope.new_mark.url = $scope.tab.url;
-	        $scope.new_mark.image = $scope.tab.image;
+	        $scope.new_mark.icon = "http://www.google.com/s2/favicons?domain=" + $scope.tab.url;
 	        $scope.new_mark.dateAdded = new Date();
 	        $scope.new_mark.dateVisited = new Date();
 	        $scope.new_mark.order = $scope.marks.length;
