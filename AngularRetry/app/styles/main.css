@@ -1,18 +1,109 @@
 body{
 	width:400px;
 }
-.container, .container-fluid{
+/*.container, .container-fluid{
 	max-width:100%;
 	max-height:300px;
 	overflow-y:auto;
 	overflow-x:hidden;
 	padding-bottom:20px;
-}
+}*/
 
 nav.navbar {
     margin-bottom:5px;
 }
 
 .nav.nav-pills {
-    margin:10px;
+    margin-top:10px;
 }
+
+.list-view, .list-view-tags {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+.list-view-item {
+
+    position:relative;
+}
+.list-view-tags {
+    margin-left:32px;
+}
+
+
+.list-view-tags li{
+    display:inline;
+    margin-right:5px;
+}
+
+.list-view-item {
+    height: 100px;
+    overflow:hidden;
+    margin:8px 6px;
+}
+
+.list-view-icon {
+    float:left;
+    margin: -2px 16px 0 0;
+}
+.list-view-title {
+    font-size:16px;
+    margin:0;
+    height:18px; 
+    width: 85%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.list-view-description {
+    font-size:14px;
+    color:#bbbbbb;
+    height:22px; 
+    width: 85%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    margin-bottom:0;
+    margin-top:0;
+}
+
+.list-remove, .list-edit {
+    display:none;
+}
+.list-view-item:hover .list-remove, .list-view-item:hover .list-edit {
+    display:block;
+}
+.list-view-item .list-remove{
+    position:absolute;
+    top: 0;
+    right:0;
+}
+.list-remove a, .list-remove a:hover {
+    color: #e51c23;
+    cursor:pointer;
+}
+.list-edit {
+    position:absolute;
+    bottom: 34px;
+    right: 0;
+    color:#bbb;
+}
+
+.floating-icon {
+    position:fixed;
+    top:5px;
+    right:5px;
+    display:inline-block;
+    background-color:#2196f3;
+    border-radius:50%!important;
+    width:40px;
+    height:40px;
+    font-size:20px!important;
+}
+    .floating-icon span {
+        color:#fff;
+        position:relative;
+        right: 7px;
+        top:-3px;
+    } 

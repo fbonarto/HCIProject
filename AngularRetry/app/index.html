@@ -2,6 +2,7 @@
 <html ng-app="markticle">
     <head>
         <meta charset="utf-8">
+        <title>Bookmarks</title>
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <!-- endbower -->
@@ -13,15 +14,23 @@
         <!-- endbuild -->
     </head>
     <body ng-controller="MainController">
-        <ul class="nav nav-pills" >
+        <div class="container"><!--<ul class="nav nav-pills">
           <li ng-class="{active:is_active('/')}"><a href="#/" data-toggle="tab" aria-expanded="false">Search</a></li>
-          <li ng-class="{active:is_active('/add')}"><a href="#/add" data-toggle="tab" aria-expanded="false" ng-click="tab = getTab()">Add</a></li>
+          <li ng-class="{active:is_active('/add')}"><a href="#/add" data-toggle="tab" aria-expanded="false" >Add</a></li>
      
-        </ul>
+        </ul>-->
+        <div class="alert alert-dismissible alert-success" ng-if="add_success">
+          <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">&times;</button>
+          <strong>Awesome!</strong> Bookmark was successfully added! 
+        </div>
+        <div class="alert alert-dismissible alert-success" ng-if="edit_success">
+          <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">&times;</button>
+          <strong>Cool!</strong> {{edit_mark.title}} was successfully edited! 
+        </div>
+		</div>
         <div id="main_wrapper" class="container container-fluid" >
             <div ng-view></div>
         </div>
-		
         <!-- build:js scripts/modules.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>

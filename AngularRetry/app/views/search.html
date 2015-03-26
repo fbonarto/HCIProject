@@ -1,27 +1,25 @@
-<div class="alert alert-dismissible alert-success" ng-if="add_success">
-  <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">×</button>
-  <strong>Awesome!</strong> Bookmark was successfully added! 
-</div>
-<div class="alert alert-dismissible alert-success" ng-if="edit_success">
-  <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">×</button>
-  <strong>Awesome!</strong> {{edit_mark.title}} was successfully edited! 
-</div>
+
 			<input type="search" ng-model="search" placeholder="Search..." class="form-control"/>
             <section id="my_marks">
                 <div class="alert alert-info" ng-if="marks.length < 1">
                   <strong>Woah!</strong> You have no bookmarks yet. Try <a href="#/add" class="alert-link">adding some</a>.
                 </div>
-                <ul ng-if="marks.length >= 1">
-				<div class="scroll">
-                    <li ng-repeat="mark in marks | filter:search">
+                <br />
+				<ul ng-if="marks.length >= 1" class="list-view">
+                    <li ng-repeat="mark in marks track by $index | filter:search" class="list-view-item">
 						<!--{{mark}}-->
-						<img ng-src="{{mark.icon}}"/>
-						<img ng-src="{{mark.image}}" ng-if="mark.image" />
-                        <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}</a>
-                        <div class="remove"><a class="remove" ng-click="removeMark(mark.id)">remove</a></div>
-                        <div class="edit"><a ng-click="getMark($index)" href="#/edit">edit</a></div>
-                        {{mark}}
-                    </li>
-				</div>
-                </ul>
+                        <div class="list-view-icon"><img ng-src="{{mark.icon}}" ng-if="mark.icon" class="icon" /></div>
+                        <a target="_blank" ng-href="{{mark.url}}"><h2 class="list-view-title"> {{mark.title}}</h2></a>
+                        <p class="list-view-description">{{mark.description}} {{getDate(mark.dateVisited)}}</p>
+                        <ul class="list-view-tags">
+                            <li ng-repeat="tag in mark.tags"><span  class="badge">{{tag}}</span></li>
+                            <li ng-if="!mark.tags"><i>No tags</i></li>
+                        </ul>
+                        <div class="list-remove"><a class="remove" ng-click="removeMark(mark.id)" title="Remove bookmark"><span class="glyphicon glyphicon-remove"></span></a></div>
+                        <div class="list-edit"><a ng-click="getMark($index)" href="#/edit"><span class="glyphicon glyphicon-edit"></span></a></div>
+                    
+                </li>
+				</ul>
             </section>
+
+<a href="#/add" ng-click="tab = getTab()" class="floating-icon btn" title="Add new bookmark"><span class="glyphicon glyphicon-plus"></span></a>
