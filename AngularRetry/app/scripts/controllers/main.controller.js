@@ -14,7 +14,7 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
             }
         }
 	};
-
+    $scope.search = '';
 	
     // ADD
 	var storageService = new markticleStorageService();
