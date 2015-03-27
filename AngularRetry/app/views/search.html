@@ -1,13 +1,45 @@
 
-
 			<input type="search" ng-model="search" placeholder="Search..." class="form-control"/>
 
- 
+   <a ng-click="advanced = !advanced">Advanced Options <span class="glyphicon" ng-class="{'glyphicon-chevron-right': !advanced, 'glyphicon-chevron-down': advanced}"></a>
+    <div class="advanced-search well" ng-show="advanced">
+           <div class="form-group">
+           <label for="sort">Sort By</label>
+           <select ng-model="sorttype" id="sort" class="form-control">
+               <option value="title">Name</option>
+               <option value="dateAdded">Date</option>
+               <option value="url">URL</option>
+               <option value="description">Description</option>
+               <option value="color">Color</option>
+           </select></div>
 
-<!--
+          <div class="checkbox">
+               <label>
+                   <input type="checkbox" ng-model="reverse" /> Reverse
+               </label>
+           </div><!--<hr />
+        
+           <div class="form-group">
+           <div class="checkbox">
+               <label>
+                   <input type="checkbox" ng-model="filterbytag" ng-change="filtertag = ''" /> Filter by Tag
+               </label>
+           </div>
+               <input type="text" class="form-control" ng-model="filtertag" placeholder="Tag" ng-show="filterbytag" />
+            </div>
+           <hr/>-->
+           <div class="form-group clearfix">
+           <div class="checkbox">
+               <label>
+                   <input type="checkbox" ng-model="filterbycol" ng-change="filtercol=''"/> Filter by Color
+               </label>
+           </div>
+            <ul class="colorpicker" ng-repeat="color in colorlist" ng-show="filterbycol">
+              <li ng-style="{'background-color': color}" ng-click="$parent.filtercol = color" ng-class="{'active': $parent.filtercol == color}">{{color}}</li>
+            </ul></div>
 
-
-        <div class="alert alert-dismissible alert-success" ng-if="add_success">
+    </div>
+<div class="alert alert-dismissible alert-success" ng-if="add_success">
           <button type="button" class="close" data-dismiss="alert" ng-click="add_success=false">&times;</button>
           <strong>Awesome!</strong> Bookmark was successfully added! 
         </div>
@@ -15,13 +47,17 @@
           <button type="button" class="close" data-dismiss="alert" ng-click="edit_success=false">&times;</button>
           <strong>Cool!</strong> {{edit_mark.title}} was successfully edited! 
         </div>
-        <div class="alert alert-info" ng-if="marks.length < 1">
-            <strong>Woah!</strong> You have no bookmarks yet. Try <a href="#/add" class="alert-link">adding some</a>.
-        </div>-->
+
+
+
+            <section id="my_marks">
+                <div class="alert alert-info" ng-if="marks.length < 1">
+                  <strong>Woah!</strong> You have no bookmarks yet. Try <a href="#/add" class="alert-link">adding some</a>.
+                </div>
                 <br />
-                <section id="my_marks">
 				<ul ng-if="marks.length >= 1" class="list-view">
-                    <li ng-repeat="mark in marks | orderBy: sorttype : reverse | filter:search track by $index" class="list-view-item" ng-style="{'border-left-color': mark.color}">
+                    <li ng-repeat="mark in marks | filter:search | orderBy:sorttype:reverse | filter: {color:filtercol} track by $index" class="list-view-item" ng-style="{'border-left-color': mark.color}">
+						<!--{{mark}}-->
                         <div class="list-view-icon"><img ng-src="{{mark.icon}}" ng-if="mark.icon" class="icon" /></div>
                         <a target="_blank" ng-href="{{mark.url}}"><h2 class="list-view-title"> {{mark.title}}</h2></a>
                         <p class="list-view-description">{{mark.description}} {{getDate(mark.dateVisited)}}</p>
@@ -32,8 +68,8 @@
                         <div class="list-remove"><a class="remove" ng-click="removeMark(mark.id)" title="Remove bookmark"><span class="glyphicon glyphicon-remove"></span></a></div>
                         <div class="list-edit"><a ng-click="getMark($index)" href="#/edit"><span class="glyphicon glyphicon-edit"></span></a></div>
                     
-                    </li>
+                </li>
 				</ul>
             </section>
 
-<a href="#/add" ng-click="tab = getTab()" class="floating-icon btn" title="Add new bookmark"><span class="glyphicon glyphicon-plus"></span></a>
+<a href="#/add" ng-click="tab = getTab()" id="get_picker" class="floating-icon btn" title="Add new bookmark"><span class="glyphicon glyphicon-plus"></span></a>

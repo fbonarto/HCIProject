@@ -13,15 +13,16 @@ angular.module('markticle').controller('MainController', ['$scope','$routeParams
                 $scope.$apply();
             }
         }
-    };
+	};
 
-
-    $scope.search = '';
     $scope.advanced = false;
-    $scope.reverse = false;
-    $scope.filtercol = '#FFFFFF';
     $scope.sorttype = 'dateAdded';
-
+    $scope.reverse = false;
+    $scope.filtercol = '';
+    $scope.filtertag = '';
+    $scope.filterbycol = false;
+    $scope.filterbytag = false;
+	
     // ADD
 	var storageService = new markticleStorageService();
 	$scope.tab = {};
